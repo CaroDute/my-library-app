@@ -1,24 +1,29 @@
 // utilities
-@import "/src/sass/utilities/mixins.scss";
-@import "/src/sass/utilities/variables.scss";
+@import "/src/sass/utilities/_mixins.scss";
+@import "/src/sass/utilities/_variables.scss";
 
-// pages 
-@import "/src/sass/pages/accueil.scss";
-@import "/src/sass/pages/bibliotheque.scss";
-@import "/src/sass/components/recherche.scss";
+// pages
+@import "/src/sass/pages/_accueil.scss";
+@import "/src/sass/pages/_bibliotheque.scss";
+
+// components
+@import "/src/sass/components/_recherche.scss";
+@import "/src/sass/components/header";
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('/public/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-family: "Poppins";
+  src: url("/public/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 * {
-  font-family: 'Poppins';
+  font-family: "Poppins";
+  margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   margin: 0;

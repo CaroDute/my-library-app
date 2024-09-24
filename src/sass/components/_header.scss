@@ -1,0 +1,19 @@
+.container {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  &__title {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  &__link {
+    padding-right: 15px;
+  }
+}

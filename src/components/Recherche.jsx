@@ -17,9 +17,13 @@ const Recherche = () => {
         // On stocke les résultats dans l'état resultats
         setResultats(response.data.items);
       } catch (error) {
-        console.error("Erreur lors de la requête API Google Books");
+        console.error("Erreur lors de la requête API Google Books", error);
       }
     }
+  };
+
+  const closeModal = () => {
+    setResultats("");
   };
 
   return (
@@ -39,6 +43,7 @@ const Recherche = () => {
         <div className="modal-container">
           {/* Si on a des résultats, on les parcourt et les affiche */}
           <div className="modal">
+            <i onClick={closeModal} className="fa-solid fa-circle-xmark"></i>
             <ul>
               {resultats.map((livre) => (
                 <li key={livre.id}>

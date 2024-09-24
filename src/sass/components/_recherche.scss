@@ -21,4 +21,15 @@
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+
+  .fa-solid.fa-circle-xmark {
+    position: absolute;
+    top: 10px;
+    color: red;
+    right: 10px;
+    cursor: pointer;
+  }
+  i {
+    font-size: 20px;
+  }
 }
