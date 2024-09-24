@@ -27,7 +27,7 @@ const Recherche = () => {
   };
 
   return (
-    <div>
+    <div className="search__input">
       {/* Champ de saisie pour entrer le nom du livre à rechercher */}
       <input
         type="text"

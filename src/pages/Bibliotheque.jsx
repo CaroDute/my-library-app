@@ -11,13 +11,15 @@ const Bibliotheque = () => {
           <img src="./src/assets/images/Loupe.png" alt="" />
           <Recherche />
         </div>
-        <div>
-          <div>
+        <div className="filter">
+          <div className="bibliotheque__title">
             <h2>Ma Bibliothèque</h2>
           </div>
-          <div>
-            <h3>Filtres</h3>
-            <ul>
+          <div className="filter__content">
+            <div className="filter__title">
+              <h3>Filtres</h3>
+            </div>
+            <ul className="filter__list">
               <li>
                 <button>favoris</button>
               </li>
@@ -35,11 +37,10 @@ const Bibliotheque = () => {
               </li>
             </ul>
           </div>
-          <div>
-            <h3>Mes livres</h3>
-
-            <Livres />
-          </div>
+        </div>
+        <div>
+          <h3>Mes livres</h3>
+          <Livres />
         </div>
       </div>
     </div>
