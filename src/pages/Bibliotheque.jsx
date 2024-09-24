@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Livres from "../components/Livres";
+import Recherche from "../components/Recherche";
 
 const Bibliotheque = () => {
   return (
@@ -23,6 +24,7 @@ const Bibliotheque = () => {
       </div>
       <div>
         <h3>Mes livres</h3>
+        <Recherche />
         <Livres />
       </div>
     </div>
