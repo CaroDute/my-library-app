@@ -18,14 +18,13 @@ const Recherche = () => {
         const response = await axios.get(
           `https://www.googleapis.com/books/v1/volumes?q=${query}&key=AIzaSyDeKtL1eQojXEIYIiISPfkPQOm0_NpdOf4`
         );
+        console.log(response.data);
 
         // On stocke les résultats dans l'état resultats
         if (response.data.items && response.data.items.length > 0) {
           setResultats(response.data.items);
           setShowModal(true);
-          console.log("Résultats mis à jour :", response.data.items);
         } else {
-          console.log("Aucun résultat trouvé.");
           setResultats([]); // Vide les résultats si rien n'est trouvé
           setShowModal(false);
         }
@@ -60,7 +59,6 @@ const Recherche = () => {
     };
   }, [showModal]);
 
-  
   return (
     <>
       <div className="container mt-3">
@@ -91,7 +89,11 @@ const Recherche = () => {
           tabIndex="-1"
           role="dialog"
         >
-          <div className="modal-dialog modal-dialog-scrollable" role="document" ref={modalRef}>
+          <div
+            className="modal-dialog modal-dialog-scrollable modal-lg"
+            role="document"
+            ref={modalRef}
+          >
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Résultats de recherche</h5>
@@ -100,13 +102,13 @@ const Recherche = () => {
                 <ul>
                   {resultats.map((livre) => (
                     <li key={livre.id}>
-                      {livre.volumeInfo.title}
                       {livre.volumeInfo.imageLinks?.thumbnail && (
                         <img
                           src={livre.volumeInfo.imageLinks.thumbnail}
                           alt={`Couverture de ${livre.volumeInfo.title}`}
                         />
                       )}
+                      {livre.volumeInfo.title}
                     </li>
                   ))}
                 </ul>
@@ -124,66 +126,8 @@ const Recherche = () => {
           </div>
         </div>
       )}
-
-      {/* {showModal && (
-        <div className="modal-dialog modal-dialog-scrollable">
-          <i onClick={closeModal} className="fa-solid fa-circle-xmark"></i>
-          <ul>
-            {resultats.map((livre) => (
-              <li key={livre.id}>
-                {livre.volumeInfo.title}
-                {livre.volumeInfo.imageLinks?.thumbnail && (
-                  <img
-                    src={livre.volumeInfo.imageLinks.thumbnail}
-                    alt={`Couverture de ${livre.volumeInfo.title}`}
-                  />
-                )}{" "}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )} */}
     </>
   );
 };
 
 export default Recherche;
-
-//   return (
-//     <div className="search__input">
-//       {/* Champ de saisie pour entrer le nom du livre à rechercher */}
-//       <input
-//         type="text"
-//         value={query}
-//         onChange={(e) => setQuery(e.target.value)} // Met à jour l'état 'query' si le texte change
-//         placeholder="Rechercher un livre"
-//       />
-//       {/* Bouton qui, lorsqu'on clique dessus, déclenche la fonction handleRecherche */}
-//       <button onClick={handleRecherche}>Rechercher</button>
-
-//       {/* On affiche les résultats ici */}
-//       {resultats.length > 0 && (
-//         <div className="modal-container">
-//           {/* Si on a des résultats, on les parcourt et les affiche */}
-//           <div className="modal">
-//             <i onClick={closeModal} className="fa-solid fa-circle-xmark"></i>
-//             <ul>
-//               {resultats.map((livre) => (
-//                 <li key={livre.id}>
-//                   {/* On affiche le titre du livre (volumeInfo.title) renvoyé par l'API */}
-//                   {livre.volumeInfo.title}
-//                   {livre.volumeInfo.imageLinks?.thumbnail && (
-//                     <img
-//                       src={livre.volumeInfo.imageLinks.thumbnail}
-//                       alt={`Couverture de ${livre.volumeInfo.title}`}
-//                     />
-//                   )}{" "}
-//                 </li>
-//               ))}
-//             </ul>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };

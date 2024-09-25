@@ -3,19 +3,10 @@
   height: 100vh;
 
   .search {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-
-    img {
-      width: 100px;
-    }
   }
-}
-
-.filter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
