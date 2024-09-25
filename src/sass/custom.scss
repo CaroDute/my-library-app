@@ -1,0 +1,26 @@
+// Importations nécessaires
+@import "../node_modules/bootstrap/scss/functions"; // Import des fonctions Bootstrap
+@import "../node_modules/bootstrap/scss/variables"; // Variables par défaut de Bootstrap
+@import "../node_modules/bootstrap/scss/mixins"; // Mixins Bootstrap
+
+// Import des composants que tu souhaites personnaliser
+@import "/node_modules/bootstrap/scss/buttons"; // Pour modifier les boutons
+@import "/node_modules/bootstrap/scss/modal"; 
+
+$primary: #823032;
+
+// Style pour les boutons
+.container,
+.container-fluid {
+  .btn-primary {
+    background-color: $primary;
+    border: none;
+  }
+}
+
+// Style pour la barre de recherche
+.container {
+  .search-input {
+    width: 30vw;
+  }
+}

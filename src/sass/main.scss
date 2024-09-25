@@ -1,18 +1,33 @@
+// Bootstrap imports
+@import "../node_modules/bootstrap/scss/functions"; // Import des fonctions Bootstrap
+@import "../node_modules/bootstrap/scss/variables"; // Variables par défaut de Bootstrap
+@import "../node_modules/bootstrap/scss/variables-dark"; // Variables pour le thème sombre
+@import "../node_modules/bootstrap/scss/maps"; // Maps de couleurs et d'espacements
+@import "../node_modules/bootstrap/scss/mixins"; // Mixins Bootstrap
+@import "../node_modules/bootstrap/scss/root"; // Styles globaux de Bootstrap
+
+// Optionally, import Bootstrap components as needed
+@import "../node_modules/bootstrap/scss/utilities"; // Utilitaires Bootstrap
+@import "../node_modules/bootstrap/scss/buttons"; // Si tu veux utiliser des boutons
+
+// Import de tes personnalisations
+@import "/src/sass/custom.scss"; // Fichier personnalisé
+
 // utilities
-@import "/src/sass/utilities/_mixins.scss";
-@import "/src/sass/utilities/_variables.scss";
+@import "/src/sass/utilities/mixins";
+@import "/src/sass/utilities/variables";
 
 // pages
-@import "/src/sass/pages/_accueil.scss";
-@import "/src/sass/pages/_bibliotheque.scss";
+@import "/src/sass/pages/accueil";
+@import "/src/sass/pages/bibliotheque";
 
 // components
-@import "/src/sass/components/_recherche.scss";
+@import "/src/sass/components/recherche";
 @import "/src/sass/components/header";
 
 @font-face {
   font-family: "Poppins";
-  src: url("/public/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -28,5 +43,3 @@ body {
   width: 100%;
   margin: 0;
 }
-
-
