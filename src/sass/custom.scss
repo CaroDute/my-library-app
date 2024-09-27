@@ -19,12 +19,18 @@ $secondary:$lightbrown-color;
     background-color: $primary;
     border: none;
     font-size: 12px;
+    &:hover {
+      background-color: $secondary;
+    }
   }
 
   .btn-secondary {
     background-color: $secondary;
     border: none;
     font-size: 12px;
+    &:hover {
+      background-color: $primary;
+    }
   }
 }
 

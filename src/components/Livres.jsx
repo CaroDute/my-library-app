@@ -7,7 +7,6 @@ const Livres = () => {
         <ul>
           {books.map((book) => (
             <li key={book.id}>
-              <p>{book.title}</p>
               <img src={book.cover} alt={`Couverture de ${book.title}`} />
             </li>
           ))}

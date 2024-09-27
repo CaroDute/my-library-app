@@ -5,7 +5,7 @@ import Filtres from "../components/Filtres";
 
 const Bibliotheque = () => {
   return (
-    <div>
+    <>
       <div className="library">
         <Header />
         <div className="library__title">
@@ -22,7 +22,7 @@ const Bibliotheque = () => {
           <Livres />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

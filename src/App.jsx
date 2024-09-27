@@ -5,12 +5,12 @@ import Bibliotheque from "./pages/Bibliotheque";
 const App = () => {
   return (
     <BrowserRouter>
-      <div>
+      <>
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/Bibliotheque" element={<Bibliotheque />} />
         </Routes>
-      </div>
+      </>
     </BrowserRouter>
   );
 };

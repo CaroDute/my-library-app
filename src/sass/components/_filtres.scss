@@ -23,5 +23,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+
+    label {
+      &:hover {
+        background-color: $primary !important;
+      }
+    }
   }
 }

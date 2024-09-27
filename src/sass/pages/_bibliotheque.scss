@@ -1,7 +1,7 @@
 .library {
   background-color: #ffe4c4;
   padding: 30px;
-  height: 100vh;
+  flex-grow: 1;
 
   &__title {
     display: flex;
