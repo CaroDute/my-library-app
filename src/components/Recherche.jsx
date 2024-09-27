@@ -61,7 +61,7 @@ const Recherche = () => {
 
   return (
     <>
-      <div className="container mt-3">
+      <div className="container m-3">
         <form className="d-flex" onSubmit={handleRecherche}>
           {/* Champ de saisie pour entrer le nom du livre à rechercher */}
           <input

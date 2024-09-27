@@ -25,6 +25,7 @@
 @import "/src/sass/components/recherche";
 @import "/src/sass/components/header";
 @import "/src/sass/components/filtres";
+@import "/src/sass/components/livres";
 
 * {
   font-family: "Open Sans", sans-serif;
@@ -43,4 +44,8 @@ body {
   height: 100%;
   margin: 0;
   background-color: #ffe4c4;
+}
+
+li {
+  list-style: none;
 }

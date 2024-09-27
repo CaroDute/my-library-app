@@ -1,5 +1,8 @@
 // Style barre de recherche
 .container {
+  display: flex;
+  justify-content: center;
+
   .form-control {
     border-radius: 10px;
   }

@@ -6,7 +6,9 @@
   &__title {
     display: flex;
     justify-content: center;
+
     h2 {
+      margin-top: 10px;
       font-size: 60px;
       font-style: 400;
     }
@@ -14,14 +16,17 @@
 
   &__search {
     width: 100%;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
   }
-}
 
-.library__filter {
-  display: flex;
-  justify-content: center;
+  &__filter {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__personal {
+    
+  }
 }

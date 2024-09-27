@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Harry Potter 1", 
+    "id": 1,
+    "cover":"./images/HP1.jpg"
+  },
+  {
+    "title": "Harry Potter 2", 
+    "id": 2,
+    "cover":"./images/HP2.jpg"
+  },
+  {
+    "title": "Harry Potter 3", 
+    "id": 3,
+    "cover":"./images/HP3.jpg"
+  },
+  {
+    "title": "Harry Potter 4", 
+    "id": 4,
+    "cover":"./images/HP4.jpg"
+  },
+  {
+    "title": "Harry Potter 5", 
+    "id": 5,
+    "cover":"./images/HP5.jpg"
+  },
+  {
+    "title": "Harry Potter 6", 
+    "id": 6,
+    "cover":"./images/HP6.jpg"
+  },
+  {
+    "title": "Harry Potter 7", 
+    "id": 7,
+    "cover":"./images/HP7.jpg"
+  }
+]
