@@ -24,22 +24,23 @@
 // components
 @import "/src/sass/components/recherche";
 @import "/src/sass/components/header";
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+@import "/src/sass/components/filtres";
 
 * {
-  font-family: "Poppins";
+  font-family: "Open Sans", sans-serif;
   margin: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: "Abril Fatface", serif;
 }
 
 html,
 body {
-  height: 100%;
-  width: 100%;
   margin: 0;
+  padding: 0;
+  height: 100%;
+  margin: 0;
+  background-color: #ffe4c4;
 }

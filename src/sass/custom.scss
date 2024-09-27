@@ -5,24 +5,26 @@
 
 // Import des composants que tu souhaites personnaliser
 @import "/node_modules/bootstrap/scss/buttons"; // Pour modifier les boutons
-@import "/node_modules/bootstrap/scss/modal"; 
+@import "/node_modules/bootstrap/scss/modal";
 
-$primary: #823032;
+@import "/src/sass/utilities/variables";
+
+$primary: $darkbrown-color;
+$secondary:$lightbrown-color;
 
 // Style pour les boutons
 .container,
-.container-fluid {
+.container-fluid, .filter__list {
   .btn-primary {
     background-color: $primary;
     border: none;
+    font-size: 12px;
+  }
+
+  .btn-secondary {
+    background-color: $secondary;
+    border: none;
+    font-size: 12px;
   }
 }
-
-// Style pour la barre de recherche
-.container {
-  .search-input {
-    width: 30vw;
-  }
-}
-
 

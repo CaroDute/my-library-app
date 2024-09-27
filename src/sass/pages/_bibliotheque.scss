@@ -1,12 +1,27 @@
 .library {
-  background-color: $lightbrown-color;
+  background-color: #ffe4c4;
+  padding: 30px;
   height: 100vh;
 
-  .search {
+  &__title {
+    display: flex;
+    justify-content: center;
+    h2 {
+      font-size: 60px;
+      font-style: 400;
+    }
+  }
+
+  &__search {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
   }
+}
+
+.library__filter {
+  display: flex;
+  justify-content: center;
 }
