@@ -11,7 +11,7 @@ const SignOut = () => {
     }
   };
 
-  return <button onClick={handleSignOut}>Deconnexion</button>;
+  return <button className=" btn btn-primary" onClick={handleSignOut}>Deconnexion</button>;
 };
 
 export default SignOut;
