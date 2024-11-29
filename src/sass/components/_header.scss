@@ -1,5 +1,9 @@
 .header {
   background-color: $red-color;
   border-radius: 10px;
-}
 
+  &__login {
+    display: flex;
+    gap: 10px;
+  }
+}

@@ -11,12 +11,19 @@
   }
 }
 
-
-
 // Style Modale
+.modal .modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  height:80%;
+}
 
 .modal-header {
-  background-color: $red-color;
+  background-color: #32291e;
   color: white;
 }
 .modal-body {
@@ -49,5 +56,5 @@
 }
 
 .modal-content .modal-footer {
-  background-color: $red-color;
+  background-color: #32291e;
 }

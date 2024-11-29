@@ -1,0 +1,45 @@
+// Modale de connexion, inscription
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    border: 1px solid $darkgreen-color;
+    background-color: $lightbrown-color;
+  }
+}
+
+.modal-body {
+  border-radius: 0 0 7px 7px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    button {
+      width: 30%;
+    }
+  }
+}
+
+// Toast de confirmation
+.toast {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.toast-body {
+  display: flex;
+  justify-content: center;
+  color: white;
+}

@@ -77,7 +77,7 @@ const Login = () => {
   const handleSignOut = async () => {
     try {
       await signOut(auth);
-      showSuccessNotification("Connexion réussie !");
+      showSuccessNotification("Tu es bien déconnecté !");
     } catch (error) {
       setError("Erreur de déconnexion : ", error.message);
     }
@@ -121,36 +121,41 @@ const Login = () => {
 
   return (
     <>
-      <div>
-        <button
-          className=" btn btn-primary"
-          onClick={() => {
-            setShowModal(true);
-            setIsSignUp(true);
-          }}
-        >
-          S'inscrire
-        </button>
-        <button
-          className=" btn btn-primary"
-          onClick={() => {
-            setShowModal(true);
-            setIsSignUp(false);
-          }}
-        >
-          Se connecter
-        </button>
-        {user && (
-          <button className=" btn btn-primary" onClick={handleSignOut}>
-            Deconnexion
-          </button>
+      <div className="header__login">
+        {user ? (
+          <>
+            <button className=" btn btn-primary" onClick={handleSignOut}>
+              Deconnexion
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              className=" btn btn-primary"
+              onClick={() => {
+                setShowModal(true);
+                setIsSignUp(true);
+              }}
+            >
+              S'inscrire
+            </button>
+            <button
+              className=" btn btn-primary"
+              onClick={() => {
+                setShowModal(true);
+                setIsSignUp(false);
+              }}
+            >
+              Se connecter
+            </button>
+          </>
         )}
       </div>
 
       {/* Notification Toast */}
       {showNotification && (
         <div
-          className="toast show position-fixed bottom-0 start-50 translate-middle-x"
+          className="toast rounded-pill show position-fixed bottom-0 end-0 bg-success border-dark border-2 "
           style={{ zIndex: 1050 }}
         >
           <div className="toast-body">{notificationMessage}</div>
@@ -164,12 +169,12 @@ const Login = () => {
           style={{ display: "block" }}
           tabIndex="-1"
           role="dialog"
-          aria-labelledby="exampleModalLabel"
+          aria-labelledby="loginModal"
         >
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
+                <h5 className="modal-title" id="loginModal">
                   {isSignUp ? "Inscription" : "Connexion"}
                 </h5>
                 <button
@@ -185,31 +190,31 @@ const Login = () => {
               <div className="modal-body">
                 <form>
                   <div className="form-group">
-                    <label htmlFor="InputEmail">Email address</label>
+                    <label htmlFor="InputEmail">Adresse email</label>
                     <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="form-control"
                       id="InputEmail"
-                      placeholder="Enter email"
+                      placeholder="Entrez votre email"
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="InputPassword">Password</label>
+                    <label htmlFor="InputPassword">Mot de passe</label>
                     <input
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       type="password"
                       className="form-control"
                       id="InputPassword"
-                      placeholder="Password"
+                      placeholder="Entrez votre mot de passe"
                     />
                   </div>
                   {isSignUp && (
                     <div className="form-group">
                       <label htmlFor="InputPasswordConfirm">
-                        Confirm password
+                        Mot de passe à confirmer
                       </label>
                       <input
                         value={confirmPassword}
@@ -217,7 +222,7 @@ const Login = () => {
                         type="password"
                         className="form-control"
                         id="InputPasswordConfirm"
-                        placeholder="Password"
+                        placeholder="Confirmez votre mot de passe"
                       />
                     </div>
                   )}
