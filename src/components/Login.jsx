@@ -1,7 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import { signUp } from "../firebase/auth/signUp";
 import { signIn } from "../firebase/auth/signIn";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase/firebaseConfig";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +14,12 @@ const Login = () => {
   const [showModal, setShowModal] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
 
-  // Fonction pour l'inscription
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState("");
+
+  const { user } = useContext(UserContext);
+
+  ///////// Fonction pour l'inscription /////////
   const handleSignUp = async (e) => {
     e.preventDefault(); // Empêche le rechargement de la page par défaut
 
@@ -33,17 +41,17 @@ const Login = () => {
     try {
       await signUp(email, password);
       setError(""); // Réinitialiser les erreurs
-      alert("Inscription réussie !");
       setShowModal(false);
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+      showSuccessNotification("Inscription réussie !");
     } catch (error) {
       setError("Erreur d'inscription : " + error.message);
     }
   };
 
-  // Fonction pour la connexion
+  ///////// Fonction pour la connexion /////////
   const handleSignIn = async (e) => {
     e.preventDefault(); // Empêche le rechargement de la page par défaut
 
@@ -55,27 +63,47 @@ const Login = () => {
     try {
       await signIn(email, password);
       setError(""); // Réinitialiser les erreurs
-      alert("Connexion réussie !");
       setShowModal(false);
       setEmail("");
       setPassword("");
-
+      showSuccessNotification("Connexion réussie !");
     } catch (error) {
       setError("Erreur de connexion : " + error.message);
     }
   };
 
-  // Fermeture de modale au clic
+  ///////// Fonction pour la deconnexion /////////
 
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      showSuccessNotification("Connexion réussie !");
+    } catch (error) {
+      setError("Erreur de déconnexion : ", error.message);
+    }
+  };
+
+  // Fonction pour afficher la notification de succès
+  const showSuccessNotification = (message) => {
+    setNotificationMessage(message);
+    setShowNotification(true);
+
+    // Disparaître après 3 secondes
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 3000); // La notification disparaît après 3 secondes
+  };
+
+  // Fermeture de modale au clic
   useEffect(() => {
     const handleClickOutside = (event) => {
       const modalContent = document.querySelector(".modal-content");
       if (modalContent && !modalContent.contains(event.target)) {
         setShowModal(false);
-        setEmail("")
-        setError("")
-        setPassword("")
-        setConfirmPassword("")
+        setEmail("");
+        setError("");
+        setPassword("");
+        setConfirmPassword("");
       }
     };
 
@@ -99,7 +127,6 @@ const Login = () => {
           onClick={() => {
             setShowModal(true);
             setIsSignUp(true);
-
           }}
         >
           S'inscrire
@@ -113,7 +140,23 @@ const Login = () => {
         >
           Se connecter
         </button>
+        {user && (
+          <button className=" btn btn-primary" onClick={handleSignOut}>
+            Deconnexion
+          </button>
+        )}
       </div>
+
+      {/* Notification Toast */}
+      {showNotification && (
+        <div
+          className="toast show position-fixed bottom-0 start-50 translate-middle-x"
+          style={{ zIndex: 1050 }}
+        >
+          <div className="toast-body">{notificationMessage}</div>
+        </div>
+      )}
+
       {/* Modale de connexion/inscription */}
       {showModal && (
         <div

@@ -29,4 +29,14 @@
   &__personal {
     
   }
+
+  .toast {
+    opacity: 1 !important;
+    transition: opacity 0.5s ease;
+  }
+  
+  .toast.hide {
+    opacity: 0 !important;
+    transition: opacity 0.5s ease;
+  }
 }
