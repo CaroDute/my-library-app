@@ -1,15 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Bibliotheque from "./pages/Bibliotheque";
+import { UserProvider } from "./contexts/UserContext";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <>
-        <Routes>
-          <Route path="/" element={<Bibliotheque />} />
-        </Routes>
-      </>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <>
+          <Routes>
+            <Route path="/" element={<Bibliotheque />} />
+          </Routes>
+        </>
+      </BrowserRouter>
+    </UserProvider>
   );
 };
 

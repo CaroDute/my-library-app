@@ -2,7 +2,6 @@
 import Login from "./Login";
 import SignOut from "./SignOut";
 
-
 const Header = () => {
   return (
     <div className="container-fluid p-0">

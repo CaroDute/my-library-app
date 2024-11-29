@@ -59,6 +59,7 @@ const Login = () => {
       setShowModal(false);
       setEmail("");
       setPassword("");
+
     } catch (error) {
       setError("Erreur de connexion : " + error.message);
     }
@@ -196,55 +197,3 @@ const Login = () => {
 };
 
 export default Login;
-// {showModal && (
-//             <form>
-//               <div className="form-group">
-//                 <label htmlFor="InputEmail">Email address</label>
-//                 <input
-//                   type="email"
-//                   value={email}
-//                   onChange={(e) => setEmail(e.target.value)}
-//                   className="form-control"
-//                   id="InputEmail"
-//                   aria-describedby="emailHelp"
-//                   placeholder="Enter email"
-//                 />
-//                 <small id="emailHelp" className="form-text text-muted">
-//                   We'll never share your email with anyone else.
-//                 </small>
-//               </div>
-//               <div className="form-group">
-//                 <label htmlFor="InputPassword">Password</label>
-//                 <input
-//                   value={password}
-//                   onChange={(e) => setPassword(e.target.value)}
-//                   type="password"
-//                   className="form-control"
-//                   id="InputPassword"
-//                   placeholder="Password"
-//                 />
-//               </div>
-//               {isSignUp && (
-//                 <div className="form-group">
-//                   <label htmlFor="InputPasswordConfirm">Confirm password</label>
-//                   <input
-//                     value={confirmPassword}
-//                     onChange={(e) => setConfirmPassword(e.target.value)}
-//                     type="password"
-//                     className="form-control"
-//                     id="InputPasswordConfirm"
-//                     placeholder="Password"
-//                   />
-//                 </div>
-//               )}
-//               <button
-//                 onClick={isSignUp ? handleSignUp : handleSignIn}
-//                 type="submit"
-//                 className="btn btn-primary"
-//               >
-//                 {isSignUp ? "S'inscrire" : "Se connecter"}
-//               </button>
-//               {error && <p style={{ color: "red" }}>{error}</p>}{" "}
-//               {/* Afficher les erreurs */}
-//             </form>
-//       )}
