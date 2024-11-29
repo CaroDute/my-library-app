@@ -109,6 +109,7 @@ const Recherche = () => {
                         />
                       )}
                       {livre.volumeInfo.title}
+                      <button>Ajouter</button>
                     </li>
                   ))}
                 </ul>
