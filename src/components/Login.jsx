@@ -10,6 +10,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [userName, setUserName] = useState("");
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
@@ -23,7 +24,13 @@ const Login = () => {
   const handleSignUp = async (e) => {
     e.preventDefault(); // Empêche le rechargement de la page par défaut
 
-    if (!email || !password || !confirmPassword || !email.includes("@")) {
+    if (
+      !email ||
+      !password ||
+      !confirmPassword ||
+      !email.includes("@") ||
+      !userName
+    ) {
       setError("Tout les champs doivent être remplis !");
       return;
     }
@@ -39,12 +46,13 @@ const Login = () => {
     }
 
     try {
-      await signUp(email, password);
+      await signUp(email, password, userName);
       setError(""); // Réinitialiser les erreurs
       setShowModal(false);
       setEmail("");
       setPassword("");
       setConfirmPassword("");
+      setUserName("");
       showSuccessNotification("Inscription réussie !");
     } catch (error) {
       setError("Erreur d'inscription : " + error.message);
@@ -104,6 +112,7 @@ const Login = () => {
         setError("");
         setPassword("");
         setConfirmPassword("");
+        setUserName("");
       }
     };
 
@@ -182,7 +191,13 @@ const Login = () => {
                   className="close"
                   data-dismiss="modal"
                   aria-label="Close"
-                  onClick={() => setShowModal(false)}
+                  onClick={() => {
+                    setShowModal(false);
+                    setEmail("");
+                    setPassword("");
+                    setConfirmPassword("");
+                    setUserName("");
+                  }}
                 >
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -212,19 +227,32 @@ const Login = () => {
                     />
                   </div>
                   {isSignUp && (
-                    <div className="form-group">
-                      <label htmlFor="InputPasswordConfirm">
-                        Mot de passe à confirmer
-                      </label>
-                      <input
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
-                        type="password"
-                        className="form-control"
-                        id="InputPasswordConfirm"
-                        placeholder="Confirmez votre mot de passe"
-                      />
-                    </div>
+                    <>
+                      <div className="form-group">
+                        <label htmlFor="InputPasswordConfirm">
+                          Mot de passe à confirmer
+                        </label>
+                        <input
+                          value={confirmPassword}
+                          onChange={(e) => setConfirmPassword(e.target.value)}
+                          type="password"
+                          className="form-control"
+                          id="InputPasswordConfirm"
+                          placeholder="Confirmez votre mot de passe"
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="UserName">Nom d'Utilisateur</label>
+                        <input
+                          value={userName}
+                          onChange={(e) => setUserName(e.target.value)}
+                          type="text"
+                          className="form-control"
+                          id="UserName"
+                          placeholder="Nom d'utilisateur"
+                        />
+                      </div>
+                    </>
                   )}
                   <button
                     onClick={isSignUp ? handleSignUp : handleSignIn}
