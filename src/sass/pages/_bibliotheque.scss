@@ -1,8 +1,48 @@
-.library {
-  background-color: #ffe4c4;
-  padding: 30px;
-  flex-grow: 1;
+.cover {
+  width: 100%;
+  overflow: hidden;
   height: 100vh;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: none;
+    object-position: 65% 70%;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centre précisément l'élément */
+    width: 80%;
+    background-color: rgba(
+      $darkbrown-color,
+      0.7
+    ); /* Fond semi-transparent (noir à 60%) */
+    color: white; /* Couleur du texte */
+    padding: 20px; /* Espacement interne pour l'encadré */
+    border-radius: 8px; /* Coins arrondis pour l'encadré */
+    text-align: center; /* Centrer le texte à l'intérieur */
+    z-index: 10;
+
+    h2 {
+      font-size: 55px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
+.library {
+  background-color: $red-color;
+  flex-grow: 1;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 
   &__title {
     display: flex;
@@ -17,8 +57,8 @@
 
   &__search {
     width: 100%;
-    padding: 20px;
     display: flex;
+    padding-top: 20px;
     justify-content: center;
   }
 
@@ -31,7 +71,7 @@
     opacity: 1 !important;
     transition: opacity 0.5s ease;
   }
-  
+
   .toast.hide {
     opacity: 0 !important;
     transition: opacity 0.5s ease;

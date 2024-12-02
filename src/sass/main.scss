@@ -26,23 +26,30 @@
 @import "/src/sass/components/filtres";
 @import "/src/sass/components/livres";
 @import "/src/sass/components/login";
+@import "/src/sass/components/footer";
 
 * {
-  font-family: "Open Sans", sans-serif;
-  margin: 0;
+  font-family: "Fraunces", sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  object-fit: cover;
+}
+
+#root {
+  height: 100%;  /* Assure que le conteneur principal #root prend toute la hauteur */
+  display: flex;
+  flex-direction: column;  /* Dispose les éléments en colonne */
 }
 
 h1, h2, h3 {
   font-family: "Abril Fatface", serif;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  margin: 0;
-  background-color: #ffe4c4;
+body,html {
   height: 100%;
 }
 

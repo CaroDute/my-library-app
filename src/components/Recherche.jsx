@@ -62,23 +62,35 @@ const Recherche = () => {
   return (
     <>
       <div className="container m-3">
-        <form className="d-flex" onSubmit={handleRecherche}>
+        <form className="d-flex position-relative" onSubmit={handleRecherche}>
+          <label htmlFor="search-input" className="me-2">
+            {" "}
+            Rechercher un livre : 
+          </label>
           {/* Champ de saisie pour entrer le nom du livre à rechercher */}
           <input
             className="form-control form-control-sm search-input me-2"
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)} // Met à jour l'état 'query' si le texte change
-            placeholder="Rechercher un livre"
+            placeholder="Ta recherche..."
           />
           {/* Bouton qui, lorsqu'on clique dessus, déclenche la fonction handleRecherche */}
           <button
+        className="btn position-absolute top-0 end-0 me-2 "
+        onClick={handleRecherche}
+        type="button"
+      >
+        <i className="bi bi-search"></i>
+      </button>
+      
+          {/* <button
             className="btn btn-primary"
             onClick={handleRecherche}
             type="button"
           >
             Rechercher
-          </button>
+          </button> */}
         </form>
       </div>
 
