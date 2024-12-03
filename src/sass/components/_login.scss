@@ -10,7 +10,6 @@
     width: 30px;
     border-radius: 20px;
     border: 1px solid $darkgreen-color;
-    background-color: $green-color;
     &:hover {
       background-color: $red-color !important;
     }
@@ -19,6 +18,13 @@
 
 .modal-body {
   border-radius: 0 0 7px 7px;
+
+  .btn-link {
+    text-decoration: none;
+    color: white;
+    padding: 5px 0 0 0 ;
+    font-size: 12px;
+  }
 
   form {
     display: flex;

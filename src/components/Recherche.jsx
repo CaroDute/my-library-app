@@ -65,7 +65,7 @@ const Recherche = () => {
         <form className="d-flex position-relative" onSubmit={handleRecherche}>
           <label htmlFor="search-input" className="me-2">
             {" "}
-            Rechercher un livre : 
+            Rechercher un livre :
           </label>
           {/* Champ de saisie pour entrer le nom du livre à rechercher */}
           <input
@@ -77,13 +77,13 @@ const Recherche = () => {
           />
           {/* Bouton qui, lorsqu'on clique dessus, déclenche la fonction handleRecherche */}
           <button
-        className="btn position-absolute top-0 end-0 me-2 "
-        onClick={handleRecherche}
-        type="button"
-      >
-        <i className="bi bi-search"></i>
-      </button>
-      
+            className="btn position-absolute top-0 end-0 me-2 "
+            onClick={handleRecherche}
+            type="button"
+          >
+            <i className="bi bi-search"></i>
+          </button>
+
           {/* <button
             className="btn btn-primary"
             onClick={handleRecherche}
@@ -109,7 +109,17 @@ const Recherche = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Résultats de recherche</h5>
+                <button
+                  type="button"
+                  className="close"
+                  aria-label="Close"
+                  data-dismiss="modal"
+                  onClick={closeModal}
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
+
               <div className="modal-body">
                 <ul>
                   {resultats.map((livre) => (
@@ -121,20 +131,12 @@ const Recherche = () => {
                         />
                       )}
                       {livre.volumeInfo.title}
-                      <button>Ajouter</button>
+                      <button className="btn btn-secondary">Ajouter</button>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={closeModal}
-                >
-                  Fermer
-                </button>
-              </div>
+              <div className="modal-footer"></div>
             </div>
           </div>
         </div>
