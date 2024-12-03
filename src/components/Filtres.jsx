@@ -9,46 +9,46 @@ const Filtres = () => {
           <input
             type="checkbox"
             className="btn-check btn"
-            id="btn-check"
+            id="btn-check-tous"
             autoComplete="off"
           ></input>
-          <label className="btn btn-secondary btn-sm" htmlFor="btn-check">
+          <label className="btn btn-secondary btn-sm" htmlFor="btn-check-tous">
             Tous
           </label>
           <input
             type="checkbox"
             className="btn-check btn"
-            id="btn-check2"
+            id="btn-check-favoris"
             autoComplete="off"
           ></input>
-          <label className="btn btn-secondary btn-sm" htmlFor="btn-check2">
+          <label className="btn btn-secondary btn-sm" htmlFor="btn-check-favoris">
             Favoris
           </label>
           <input
             type="checkbox"
             className="btn-check btn"
-            id="btn-check3"
+            id="btn-check-lu"
             autoComplete="off"
           ></input>
-          <label className="btn btn-secondary btn-sm" htmlFor="btn-check3">
+          <label className="btn btn-secondary btn-sm" htmlFor="btn-check-lu">
             Lu
           </label>
           <input
             type="checkbox"
             className="btn-check btn"
-            id="btn-check4"
+            id="btn-check-encours"
             autoComplete="off"
           ></input>
-          <label className="btn btn-secondary btn-sm" htmlFor="btn-check4">
+          <label className="btn btn-secondary btn-sm" htmlFor="btn-check-encours">
             En cours
           </label>
           <input
             type="checkbox"
             className="btn-check btn"
-            id="btn-check5"
+            id="btn-check-wishlist"
             autoComplete="off"
           ></input>
-          <label className="btn btn-secondary btn-sm" htmlFor="btn-check5">
+          <label className="btn btn-secondary btn-sm" htmlFor="btn-check-wishlist">
             WishList
           </label>
 

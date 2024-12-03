@@ -40,17 +40,25 @@ img {
 }
 
 #root {
-  height: 100%;  /* Assure que le conteneur principal #root prend toute la hauteur */
+  height: 100%; /* Assure que le conteneur principal #root prend toute la hauteur */
   display: flex;
-  flex-direction: column;  /* Dispose les éléments en colonne */
+  flex-direction: column; /* Dispose les éléments en colonne */
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Abril Fatface", serif;
 }
 
-body,html {
+body,
+html {
   height: 100%;
+}
+
+main {
+  flex: 1;
+  background-color: $red-color;
 }
 
 li {

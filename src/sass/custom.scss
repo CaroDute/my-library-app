@@ -9,12 +9,13 @@
 
 @import "/src/sass/utilities/variables";
 
-$primary: $darkbrown-color;
-$secondary:$lightbrown-color;
+$primary: $green-color;
+$secondary: $darkgreen-color;
 
 // Style pour les boutons
 .container,
-.container-fluid, .filter__list {
+.container-fluid,
+.filter__list {
   .btn-primary {
     background-color: $primary;
     border: none;
@@ -33,4 +34,3 @@ $secondary:$lightbrown-color;
     }
   }
 }
-

@@ -24,8 +24,6 @@
       color: #122620;
     }
   }
-
-
 }
 
 // Style Modale
@@ -36,7 +34,7 @@
 }
 
 .modal-content {
-  height:80%;
+  height: 80%;
 }
 
 .modal-header {
@@ -44,7 +42,7 @@
   color: white;
 }
 .modal-body {
-  background-color: $lightgreen-color;
+  background-color: $green-color;
 
   ul {
     display: flex;

@@ -133,14 +133,14 @@ const Login = () => {
       <div className="header__login">
         {user ? (
           <>
-            <button className=" btn btn-primary" onClick={handleSignOut}>
+            <button className=" btn btn-secondary" onClick={handleSignOut}>
               Deconnexion
             </button>
           </>
         ) : (
           <>
             <button
-              className=" btn btn-primary"
+              className=" btn btn-secondary"
               onClick={() => {
                 setShowModal(true);
                 setIsSignUp(true);
@@ -149,7 +149,7 @@ const Login = () => {
               S'inscrire
             </button>
             <button
-              className=" btn btn-primary"
+              className=" btn btn-secondary"
               onClick={() => {
                 setShowModal(true);
                 setIsSignUp(false);
@@ -257,7 +257,7 @@ const Login = () => {
                   <button
                     onClick={isSignUp ? handleSignUp : handleSignIn}
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-secondary"
                   >
                     {isSignUp ? "S'inscrire" : "Se connecter"}
                   </button>
