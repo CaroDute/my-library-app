@@ -57,11 +57,13 @@ const Bibliotheque = () => {
           </div>
         </div>
         <div className="library">
-          <div className="library__search">
-            <Recherche />
-          </div>
-          <div className="library__filter">
-            <Filtres />
+          <div className="library__header">
+            <div className="library__search">
+              <Recherche />
+            </div>
+            <div className="library__filter">
+              <Filtres />
+            </div>
           </div>
           <div className="library__personal">
             <Livres />

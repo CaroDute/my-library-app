@@ -1,23 +1,53 @@
 .books {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 100%;
+
   ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     list-style-type: none;
+    gap: 25px;
+    margin: 30px 30px 30px 30px;
     padding: 0;
-    margin: 0;
+    width: 100%;
   }
 
   li {
-    width: 20%;
+    background-color: $darkbrown-color;
+    flex: 1 1 calc(20% - 20px); /* 25% de largeur en tenant compte de l'espacement */
+    max-width: calc(
+      20% - 20px
+    ); /* Garantit que la largeur ne dépasse pas 25% */
+    box-sizing: border-box; /* Inclut le padding dans le calcul de la largeur */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+
+    h5 {
+      margin-top: 8px;
+      color: white;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      i {
+        color: pink;
+      }
+    }
 
     img {
+      padding-top: 15px;
       width: 100%;
       height: auto;
       max-width: 200px;

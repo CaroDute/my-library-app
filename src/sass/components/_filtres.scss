@@ -3,8 +3,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: $red-color;
   padding: 20px;
+  padding-top: 0;
 
   border-radius: 10px;
   width: 70%;
@@ -24,10 +24,17 @@
     flex-wrap: wrap;
     gap: 20px;
 
-    label {
-      background-color: $secondary;
+    button {
+      background-color: $green-color;
       &:hover {
-        background-color: $primary !important;
+        background-color: $darkgreen-color !important;
+      }
+    }
+
+    label {
+      background-color: $green-color;
+      &:hover {
+        background-color: $darkgreen-color !important;
       }
     }
   }
